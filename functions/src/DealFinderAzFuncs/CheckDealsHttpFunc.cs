@@ -1,19 +1,18 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
+using DF.Services.Html;
+using DF.Services.Models;
+using DF.Services.State;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using DF.Services.Html;
-using Microsoft.Extensions.Configuration;
-using DF.Services.State;
-using System.Net.Http;
-using DF.Services.Models;
-using System.Text;
+using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DealFinderAzFuncs
 {
