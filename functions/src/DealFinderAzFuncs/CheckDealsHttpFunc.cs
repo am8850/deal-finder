@@ -160,7 +160,8 @@ namespace DealFinderAzFuncs
                 ".btn-primary {" +
                 "color: #fff;" +
                 "background-color: #0d6efd;" +
-                "border-color: #0d6efd;}</style>");
+                "border-color: #0d6efd;} .mt-0 {margin-top: 0 !important;} .mt-1 {margin-top: 0.25rem !important;} .mt-2 {margin-top: 0.5rem !important;} .mt-3 {margin-top: 1rem !important;}"+
+                ".mt-4 {margin-top: 1.5rem !important;} .mt-5 {margin-top: 3rem !important;} .mt-auto {margin-top: auto !important;}</style>");
                 sb.Append("</head><body><div><table>");
                 foreach (var deal in results)
                 {
@@ -168,16 +169,15 @@ namespace DealFinderAzFuncs
                     
                     // TODO: Move to Eastearn time
                     sb.Append($"{DateTime.UtcNow}<br>");
-                    sb.Append($"<a class=\"btn btn-primary\" href='{deal.Site}'>{deal.Domain}</a><br>");
+                    sb.Append($"<div style='mt-1'><a class=\"btn btn-primary\" href='{deal.Site}'>{deal.Domain}</a></div><br>");
                     if (!string.IsNullOrEmpty(deal.Vendor))
-                        sb.Append($"{deal.Vendor}<br>");
-                    sb.Append($"{deal.Description}<br>");
+                        sb.Append($"<div class='mt-1'>{deal.Vendor}</div><br>");
+                    sb.Append($"<div class='mt-1'>{deal.Description}<div><br>");
                     if (!string.IsNullOrEmpty(deal.Price))
-                        sb.Append($"{deal.Price}<br>");
-
+                        sb.Append($"<div class='mt-1'>{deal.Price}</div><br>");
                     if (!string.IsNullOrEmpty(deal.Link))
                         //sb.Append($":{deal.Link}");
-                        sb.Append($"<a class=\"btn btn-primary\" href=\"{deal.Link}\" target=\"_blank\">Get Deal</a><br>");
+                        sb.Append($"<div class='mt-1'><a class=\"btn btn-primary mt-1\" href=\"{deal.Link}\" target=\"_blank\">Get Deal</a><br></div>");
 
                     sb.Append("<hr></td></tr>");
                 }
